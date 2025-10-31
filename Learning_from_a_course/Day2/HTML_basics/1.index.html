@@ -1,0 +1,74 @@
+<!-- What is a Tag, A Tag is a Keyword or instruction for browser to render a specific detail or format of a element 
+ 
+Html is interpreted by web browser at runtime it is called "rendering"
+Okay lets write something and go live ! as we can see we can see it live on browser
+-->
+
+Hello world ! 
+<!-- we have a proper way or structure on writing html code !
+
+<! DOCTYPE html> : it means we are declaring the following document in html format (it is a syntax or format for HTML5) : it tells the browser to use standard Html format to render and support the code 
+
+<html lang="en"> : This tag means we are writing the document in english primarily
+
+<Head> </head> : contains Meta data of a website which is not visible content, But plays a crucial role in instructing the web browser about enconding formats,viewport,stylessheets,scripts etc
+
+metadata = > Informatin about an information
+
+<meta charset="UTF-8"> : Universal text format -8(bits), this tells the browser how to read and display characters inside the Html file. 
+
+Why we use it is because : it not only supports (A-Z) but also support : 
+Latin characters :  é, ñ, ü
+
+Non-English scripts : नमस्ते, 你好, こんにちは
+
+Emojis 😎🔥❤️
+
+
+so : <meta charset="UTF-8">  : This line tells the browser:
+
+“Hey, read this file using UTF-8 so you can show every symbol correctly.”
+
+
+UTF-8 declared:
+
+<meta charset="UTF-8">
+<p>Café 😊 नमस्ते</p>
+
+
+You’ll see:
+Café 😊 नमस्ते
+
+
+No UTF-8 declared (defaults to old encoding):
+You’ll see something broken like:
+CafÃ© ðŸ˜Š à¤¨à¤®à¤¸à¥à¤¤à¥‡
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> : Each mobile has a viewport(view area) so that the mobiles can view the desktop pages scaled down to mobile format.
+
+Content="width-device-width" : means sets the width of a user using mobile width. 
+
+Initial-scaling = 1.0  : zoom level is bydefault set to 100%
+
+
+<title> : is the headding of a webpage which is shown on tabs. improtant for SEO
+
+<body> : The document rendering content area. Body runs after Dom construcion 
+
+</html> : all of these are wrapped inside html file
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to Html</title>
+</head>
+<body>
+    <p>This is a paragraph tag</p>
+</body>
+</html>

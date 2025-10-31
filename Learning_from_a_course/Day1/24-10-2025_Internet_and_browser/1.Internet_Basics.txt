@@ -1,0 +1,35 @@
+<!-- Day1 - 24-10-20-25 
+
+HTML : Stands for Hypertext Markup Language 
+
+Hypertext means a text that contains Links(Hyperlinks) which redirects to other documents etc. (i.e. its not plain text it's interactive)
+
+A markup language is a set of tags that is used to define structure and meaning of a document by using tags. 
+
+ex: <p> Hello <p> this means display Hello text in paragraph format ! 
+
+In simple terms : Html is a type of language where we use Hypertext, markup functionality (tags) to display contents
+
+When a webBrowser get's a html webpage it renders the html and sends back to receiver
+
+
+Before continuing Let's make a dive into how Internet works and what is Internet.
+
+Internet : Is a conection of different computers and other devices around the world interconnected together for information sharing via some standard protocols: Such as http/https.
+
+And we have Routers(routes packets) and gateways : Ip send the packets (pieces of bits) from different direction and then send to Destination in a proper format which is ensured by TCP.
+
+Information moves from one computer to another in form of bits. Now comes the DNS and IP !
+
+DNS : stands for domain name system(it translates names to ip address) : It contains a Component known as "DNS resolver" it takes an ip address of a web page (demo.com) and then it resolves it with a domain name and redirects to that webpage. 
+
+And DNS dont have that ip address or domain name so it request the cache, which is a short time memory and if it is not found there then it requests to DNS resolver or Server where the data is stored(ex: google DNS resolver)
+
+IP : an ip is a protocol via which we can identify a electronic device which is connected to other systems via internet. It contains a Special number that that is uniue, The ip address is different for webpages,devices etc.
+
+
+When you visit a webpage (google.com) your web browser sends a HTTP req to the (Google server) asking that you made a http request to get some data( you made a request to open google) and then server responds with a HTTP response containing your requested data.
+
+Https is a secure version of http: Provides ssl/tls security layer to protect your login credentials, payment info etc.
+
+-->
