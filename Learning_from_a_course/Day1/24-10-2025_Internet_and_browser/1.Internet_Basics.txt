@@ -15,9 +15,9 @@ When a webBrowser get's a html webpage it renders the html and sends back to rec
 
 Before continuing Let's make a dive into how Internet works and what is Internet.
 
-Internet : Is a conection of different computers and other devices around the world interconnected together for information sharing via some standard protocols: Such as http/https.
+Internet : Is a connection of different computers and other devices around the world interconnected together for information sharing via some standard protocols: Such as http/https.
 
-And we have Routers(routes packets) and gateways : Ip send the packets (pieces of bits) from different direction and then send to Destination in a proper format which is ensured by TCP.
+And we have Routers(routes packets) and gateways : IP send the packets (pieces of bits) from different direction and then send to Destination in a proper format which is ensured by TCP.
 
 Information moves from one computer to another in form of bits. Now comes the DNS and IP !
 
@@ -25,7 +25,7 @@ DNS : stands for domain name system(it translates names to ip address) : It cont
 
 And DNS dont have that ip address or domain name so it request the cache, which is a short time memory and if it is not found there then it requests to DNS resolver or Server where the data is stored(ex: google DNS resolver)
 
-IP : an ip is a protocol via which we can identify a electronic device which is connected to other systems via internet. It contains a Special number that that is uniue, The ip address is different for webpages,devices etc.
+IP : an ip is a protocol via which we can identify a electronic device which is connected to other systems via internet. It contains a Special number that that is unique, The ip address is different for webpages,devices etc.
 
 
 When you visit a webpage (google.com) your web browser sends a HTTP req to the (Google server) asking that you made a http request to get some data( you made a request to open google) and then server responds with a HTTP response containing your requested data.
