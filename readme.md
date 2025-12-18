@@ -1,35 +1,72 @@
-Full Stack Web Development — My Learning Journey
+# 🚀 100 Days of Code — Full Stack Web Development  
+### My Engineering Learning Journal
 
 Hey there 👋  
-This repo is where I’m documenting everything I learn while going through **Full Stack Web Development** 
-— from the very basics (how the Internet works) to building and deploying real web applications.
 
-I’m not copying tutorials here. I’m writing down what I **actually understood**, what confused me
-and how things connect behind the scenes.  
+This repository documents my **100 Days of Code** journey focused on **Full Stack Web Development** — starting from the fundamentals (how the Internet works) to building, deploying, and reasoning about real-world web applications.
 
-This is more like my **engineering lab book** for the web.
+This is **not a tutorial dump**.  
+Everything here reflects:
+- what I *actually understood*
+- where I got confused
+- how concepts connect behind the scenes
 
----
-
-## What This Repo Includes
-
-- Notes (In form of comments) that explain things in my own words  
-- Code snippets and example files for each concept  
-- A day-wise structure so I can track progress over time  
-- Real-world explanations of *why* something works, not just *how*
+Think of this repo as my **engineering lab notebook for the web**.
 
 ---
 
-## Why I’m Doing This
+## 🧠 What This Repository Includes
 
-I’ve seen too many people rush through HTML, CSS, and JS, React — but I want to **actually understand**
-what’s happening at every layer.  
-
-So this repo is my way to:
-
-- Build a **strong base** for real-world development  
-- Have my own quick revision notes before interviews  
-- Keep everything organized (theory + code + practice)  
-- Learn how the web truly works under the hood
+- 📘 **Concept notes** written in my own words (as comments & markdown)
+- 🧩 **Code snippets & mini-experiments** for each topic
+- 📅 **Day-wise structure** to track consistent progress
+- 🌍 **Real-world explanations** — why things exist, not just how to use them
+- 🔍 Clear mental models instead of surface-level APIs
 
 ---
+
+## 🎯 Why I’m Doing This
+
+Most people rush through:
+HTML → CSS → JavaScript → React → “Done”.
+
+That creates **framework operators**, not engineers.
+
+My goals with this repo:
+- Build a **strong foundation** that scales with complexity
+- Understand the **web stack end-to-end**
+- Create **quick revision material** for interviews
+- Keep **theory + code + reasoning** in one place
+- Learn to **think like a system**, not just write syntax
+
+---
+
+## 🧱 Learning Philosophy
+
+- No blind copy-pasting
+- No skipping fundamentals
+- No memorizing APIs without understanding
+- If I can’t explain it simply, I don’t understand it
+
+
+## 🧩 Who This Is For
+
+- My future self
+- Interview preparation
+- Anyone who wants **clarity**, not shortcuts
+- Engineers who care about fundamentals
+
+---
+## 🏁 End Goal
+
+By Day 100, I should be able to:
+- Explain how the web works **without hand-waving**
+- Build full-stack apps confidently
+- Debug issues using **first principles**
+- Think beyond frameworks
+- Design systems with intent
+
+---
+
+📌 *This repo is a living document. It evolves as my understanding deepens.*
+
