@@ -1,0 +1,40 @@
+h1{
+    color: rgb(51, 47, 47);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 10px;
+}
+
+p{
+    color: rgb(211, 71, 71);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bold;
+}
+#seperatep{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 30px;
+    color: gray;
+
+}
+a{
+    text-decoration: none;
+    color: rgb(211, 71, 71);
+}
+a:hover{
+    cursor: crosshair;
+    color: skyblue;
+}
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+}
+body{
+    text-align: center;
+    background-color: rgb(233, 215, 207);
+    margin: 50px;
+}
