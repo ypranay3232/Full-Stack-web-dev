@@ -1,0 +1,66 @@
+h1 {
+    color: rgb(71, 62, 62);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 48px;
+    margin: 12px 0px;
+}
+
+a {
+    /* padding to give space to the anchor tag text */
+    padding: 12px 48px;
+    border: 1px solid gray;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    background-color: rgb(167, 1, 78);
+    border-radius: 5px;
+}
+
+/* Lets remove the hover  */
+a:hover {
+    text-decoration: none;
+    background-color: rgb(180, 100, 100);
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+#insideheadder{
+    margin-bottom: 36px;
+
+}
+/* but we also want this margin bottom at to the <p> tag so we group them */
+#insideheadder header{
+    margin-bottom: 30px;
+}
+
+/* now lets style the h2 elements  */
+h2{
+    color: rgb(78, 13, 5);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    text-align: center;
+    background-color: rgb(233, 215, 207);
+}
+
+/* lets remove the list styling  */
+ol {
+    list-style: none;
+    /* color:red; */
+    width: 500px;
+    /* margin 36px from top auto at right 0 at bottom auto at right, now you get center */
+    margin: 36px auto 0 auto;
+    /* open dev tools select the ol and scroll to check box model you can see the padding effecting it at left side we have padding 40px so remove it */
+    padding: 0;
+    /* The list elements dont have space inside it so give some space  */
+}
+
+li {
+    padding: 16px;
+    /* now these look with no space so add margin */
+    margin: 32px;
+    background-color: rgb(223, 136, 124);
+    border-radius: 6px;
+}
