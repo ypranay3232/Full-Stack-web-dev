@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(228, 193, 199);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    outline: 5px solid gray;
+    /* make the image inline element as block */
+    display: block;
+    margin: 100px auto -100px auto;
+}
+
+.container {
+    display: block;
+    width: 700px;
+    margin: -80px auto 0 auto;
+    padding-top: 100px;
+    border: 5px solid gray;
+    background-color: tomato;
+
+}
+
+h2 {
+    color: rgb(35, 35, 35);
+    font-weight: bolder;
+
+}
+
+span {
+    color: rgb(66, 17, 17);
+
+
+}
+
+h1 {
+    font-size: 40px;
+    color: rgb(54, 53, 53);
+    margin-bottom: 100px;
+}
+
+.explore-link {
+    display: inline-block;
+    /* so margin works */
+    margin-top: 30px;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(66, 17, 17);
+}
+
+.explore-link:hover {
+    text-decoration: underline;
+}
