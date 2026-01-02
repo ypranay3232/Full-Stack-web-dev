@@ -1,0 +1,66 @@
+/* first add a bg color to page  */
+body {
+    font-family: 'Roboto', 'sans-serif';
+    background-color: papayawhip;
+}
+header{
+    text-align: center;
+    padding: 32px;
+}
+h1{
+    font-size: 38px;
+    color:darkred;
+}
+header img{
+    width: 200px;
+}
+
+main{
+    background-color: #94746a;
+    padding: 32px;
+    width: 700px;
+    margin: 32px auto;
+    border-radius: 10px;
+    color: rgb(248, 241, 246);
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+li{
+    padding-left: 20px;
+    margin: 10px auto;
+}
+#imp{
+    color: rgb(255, 237, blue77);
+    border-left: 5px solid rgb(247,209,85);
+    color: darkred;
+
+}
+span{
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    background-color: rgb(255, 237, 177);
+    color: rgb(36, 3, 102);
+}
+a:hover, a:active{
+    background-color: rgb(250, 201, 39);
+}   
+footer{
+    text-align: center;
+    margin-bottom: 100px;
+}
+footer p{
+    margin-top: 30px;
+    color: rgb(131, 113,149);
+}
+footer a{
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: rgb(250, 201, 39);
+    color: rgb(66, 51, 4);
+}
