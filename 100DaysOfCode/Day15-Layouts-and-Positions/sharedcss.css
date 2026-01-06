@@ -1,0 +1,21 @@
+
+
+body{
+    margin: 0px;
+}
+
+#page-logo a{
+      font-family: "Gravitas One", serif;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 50px;
+    color: rgb(245, 243, 160);
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
