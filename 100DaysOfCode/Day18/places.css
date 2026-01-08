@@ -1,0 +1,17 @@
+main li img {
+    height: 300px;
+    width: 280px;
+}
+
+body {
+    background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+}
+
+.places-page main {
+    margin-top: 120px;
+}
+
+header {
+    position: static;
+    font-family: "Gravitas One", serif;
+}
