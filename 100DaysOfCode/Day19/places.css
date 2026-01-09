@@ -1,0 +1,52 @@
+main li img {
+    height: 300px;
+    width: 280px;
+    object-fit: cover;
+}
+
+body {
+    background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+    color: rgb(68, 68, 68);
+}
+
+.places-page main {
+    margin-top: 120px;
+}
+
+header {
+    position: static;
+    font-family: "Gravitas One", serif;
+}
+main ul{
+    width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+main li{
+    display: flex;
+    background-color: white;
+    box-shadow: 1px 1px 4px rgb((0), 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    width: 500px;
+}
+.item-content{
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.actions{
+    text-align:right;
+}
+.actions a{
+    text-decoration: none;
+    padding: 8px;
+    color: rgb(22, 211, 228);
+    border-radius: 5px;
+}
+.actions a:hover{
+    background-color: rgb(235, 253, 255);
+}
