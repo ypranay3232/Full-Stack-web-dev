@@ -1,0 +1,95 @@
+*{
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+    font-variation-settings: wdth" 100;
+}
+body{
+    margin: 0;
+    background-color: rgb(44, 41, 38);
+}
+
+a{
+    text-decoration: none;
+}
+#main-header{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: rgb(29, 26, 24);
+
+}
+#logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(238, 164, 80);
+}
+#main-header ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+#main-header li{
+    margin: 0 1rem;
+}
+#main-header nav a{
+    color: rgb(185, 131, 31);
+    font-size: 1.25rem;
+}
+#main-header nav a:hover{
+    background-color: rgb(228, 163, 44);
+    color: white;
+    padding: 20px;
+    border-radius: 24px;
+}
+main h1{
+    text-align: center;
+    color: rgb(228, 163, 44);
+    font-size: 3rem;
+}
+#latest-products{
+    width: 80%;
+    margin: 2rem auto;
+}
+#latest-products ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.food-item img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+}
+.food-item{
+    overflow: hidden;
+    background-color: rgb(228, 206, 182);
+    border-radius: 10px;
+}
+.food-item-contents{
+    text-align: center;
+    padding: 1rem;
+    /* font-size: 70px; */
+}
+
+.btn{
+    color: white;
+    background-color: rgb(228, 157, 44);
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: rgb(189, 109, 18);
+}
+/* h2{
+    font-size: 100%;
+    font-size: 1em;
+} */
