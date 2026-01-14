@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    margin: 10rem;   
+}
+
+input{
+    width: 50rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+button{
+    display: block;
+}
