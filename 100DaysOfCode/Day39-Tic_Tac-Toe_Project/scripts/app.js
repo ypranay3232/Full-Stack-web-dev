@@ -47,3 +47,21 @@ startnewgame.addEventListener("click",StartNewGame)
 for(const gamefieldelement of gamefieldelements){
     gamefieldelement.addEventListener("click",selectgamefield)
 }
+
+// Dark mode feature : 
+const themetogglebtn = document.getElementById("theme-toggle")
+
+// On load
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark")
+}
+
+// On toggle
+themetogglebtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark")
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+    )
+})
