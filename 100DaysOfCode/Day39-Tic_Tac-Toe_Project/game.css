@@ -47,3 +47,29 @@
 .Gameboard li:hover{
     background-color: rgb(112, 13, 204);
 }
+.Gameboard li.disabled {
+    background-color: rgb(112, 13, 204);
+    color: white;
+    cursor: default;
+}
+
+.Gameboard li.disabled:hover {
+    background-color: rgb(112, 13, 204);
+}
+.Gameboard li.player-x {
+    color: rgb(40, 40, 200);
+    background-color: rgb(200, 200, 255);
+}
+
+.Gameboard li.player-o {
+    color: rgb(180, 20, 20);
+    background-color: rgb(255, 200, 200);
+}
+
+.Gameboard li.disabled {
+    cursor: default;
+}
+
+.Gameboard li.disabled:hover {
+    background-color: inherit;
+}

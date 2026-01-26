@@ -15,8 +15,6 @@ function playerconfig(event) {
     formelement.playername.focus()
 }
 
-
-
 function closeplayerconfig() {
     playerconfigpopupelement.style.display = 'none'
     blockerelement.style.display = 'none'
