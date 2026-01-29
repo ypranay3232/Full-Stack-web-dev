@@ -1,0 +1,15 @@
+{
+  "name": "day42-express",
+  "version": "1.0.0",
+  "description": "Learning Express",
+  "license": "MIT",
+  "author": "pranay",
+  "types": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
