@@ -1,0 +1,19 @@
+{
+  "name": "day44-backend_project_contact_manager",
+  "version": "1.0.0",
+  "description": "CURD Project using Node js, Express and mongo DB.",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
