@@ -1,7 +1,4 @@
-const { timeStamp } = require("console")
-const { Timestamp } = require("firebase/firestore/lite")
 const mongoose = require("mongoose")
-const { type } = require("os")
 
 const contactschema = mongoose.Schema({
     name:{
@@ -17,7 +14,7 @@ const contactschema = mongoose.Schema({
         required: [true, "please add the contact phone number"],
     },
 },{
-    Timestamp: true,
+    timestamps: true,
 })
 
 module.exports = mongoose.model("contact", contactschema)

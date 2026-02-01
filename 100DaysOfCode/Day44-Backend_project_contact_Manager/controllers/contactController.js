@@ -1,6 +1,5 @@
 const asyncHandler = require("express-async-handler")
 const Contact = require("../models/contactmodel")
-const { error } = require("console")
 // @desk Get all contacts
 // @route Get  api/contacts
 //@access public
