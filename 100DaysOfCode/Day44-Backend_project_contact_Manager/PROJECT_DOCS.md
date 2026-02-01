@@ -2,8 +2,6 @@
 
 This guide provides a comprehensive, professional walkthrough to build a production-ready Contact Manager Backend.
 
-> **Note:** This documentation provides the **corrected and optimized** version of the code. It fixes several bugs found in the original implementation (such as typos, missing middleware arguments, and logic errors) to ensure the application runs perfectly.
-
 ## 📋 Prerequisites
 
 - **Node.js** installed.
@@ -522,11 +520,3 @@ module.exports = router;
 ```
 
 ---
-
-## 🎉 Conclusion
-
-If you followed this guide, you now have a professional, bug-free, and secure backend API. Unlike the raw notes, this version includes:
-
-- **Relationship support**: Contacts are linked to specific users.
-- **Robust Error Handling**: Fixed typos and logic issues.
-- **Secure Authentication**: Correctly implemented JWT middleware.
