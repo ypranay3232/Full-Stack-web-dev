@@ -69,3 +69,7 @@ console.log(hobbies)//NOTE : we cant directly assign the constant values with an
 
 // Primitive values are stored in : stack Memory
 // Reference values are stored in : Heap Memory
+const task = ["project1","project2"]
+
+hobbies.push("project3")
+console.log(task)
