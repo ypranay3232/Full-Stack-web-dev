@@ -48,3 +48,29 @@
 
 
 // now install mysql. 
+
+
+
+// No SQL : MongoDB, the main goal is to : we can store data without schema, structure of the table, no need to define the rows, cols.
+
+// The idea is to work with collections : a collection is like a table but with no structure, they are kind of a data containers. --> inside a collection we have documents (kind of objects in js) that contain key value pairs.
+
+// Download mongodb community server, shell. open shell folder and run the mongosh application. 
+
+// open it add a local host : 5000 --> use firstproject (this creates and switches to that db) :
+
+
+// Insert data : db.restaurants.insertOne({name: "user1",address: "ADC street"})
+
+// Read data : db.restaurants.find(), you can also find by specific name : ex: db.restaurants.find({name:"user1"}) 
+
+
+// searching for a specific detail in db : db.restaurants.find({}, {name:1}) 
+
+
+// updating data : db.restaurants.updateOne({_id: objectid("id here")}, {$set: {name: "updated_user1"}} )
+
+
+// deleting data : db.restaurants.deleteOne({_id: ObjectID("object id")})
+
+// we can also use updateMany() and deleteMany()
