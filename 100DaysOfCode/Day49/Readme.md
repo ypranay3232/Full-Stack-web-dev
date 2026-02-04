@@ -1,0 +1,1 @@
+I'm Tired of Watching and learning from course videos, so i'm gonna try something fun ! 
