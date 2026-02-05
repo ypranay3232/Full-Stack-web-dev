@@ -2,7 +2,6 @@
 
 A real-time location tracking application built with Node.js, Express, Socket.io, and Leaflet.js. This project allows you to track users' locations on a map in real-time as they connect to the server.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## 🚀 How It's Built (Step-by-Step Guide)
 
@@ -196,5 +195,4 @@ Follow these steps to run the project locally.
 - Ensure you allow **Location Permissions** in your browser when asked.
 - If using Chrome, you might need to enable hardware acceleration for smoother map performance, though it works fine without it.
 
----
-*Built with ❤️ by [Your Name]*
+
