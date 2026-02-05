@@ -1,0 +1,21 @@
+{
+  "name": "100-days-of-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "mongodb": "7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "author": "",
+  "type": "commonjs"
+}
