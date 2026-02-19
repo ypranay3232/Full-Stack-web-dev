@@ -7,6 +7,8 @@
 
 body {
     display: flex;
+    /* the flex direction column stacks elements on top of each other this helps to keep the 10's and 100's button below the .container */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: white;
@@ -23,7 +25,7 @@ body {
     width: 500px;
     border: 1px solid white;
     border-radius: 2rem;
-    margin-top: 8rem;/*to push the container to center forcefully */
+    margin-top: 5rem;/*to push the container to center forcefully */
 }
 
 h1 {
@@ -62,4 +64,13 @@ button:hover {
 #Reset {
     background-color: #f59e0b;
     padding: 0.5rem 2rem;
+}
+.multipliers{
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+#tens, #hundreds {
+    background-color: orange;
+    color: black;
 }
