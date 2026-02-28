@@ -1,0 +1,159 @@
+:root {
+    --primary: #2c3e50;
+    --Secondary: #34495e;
+    --accent: #a099d6;
+    --text: #333;
+    --light: #ecf0f1;
+}
+
+body {
+    /* google font */
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: light;
+    font-variation-settings:
+        "wdth" 100;
+
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: var(--primary);
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0 4rem  0;
+}
+
+button:hover {
+    /* moves the y axis -2px from position(goes -2px */
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.palette {
+    /* styling the color pallets which we generate from js */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.color{
+    height: 23rem;
+    border-radius: 1.3rem;
+    box-shadow: 0 0.5rem 1.3rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* to move the color from its original position  */
+    position: relative;
+    overflow: hidden;
+}
+
+/* now to add the colors  */
+.color::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to button, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0)100%);
+    pointer-events: none;
+}
+
+.color:hover{
+    transform: translateY(-5px);
+    box-sizing: 0 1rem 3rem rgba(0,0,0,0.15);
+}
+.color-value{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 7rem;
+    z-index: 1;
+    transition: all 0.2 ease;
+}
+
+.color:hover .color-value{
+    background-color: white;
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.1);
+}
+.copied-msg{
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50px);
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 0.3 ease;
+    font-weight: 500;
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0,0.2);
+    z-index: 100;
+}
+
+.copied-msg.show{
+    opacity: 1;
+}
+
+@media (max-width: 768px){
+    .palette{
+        grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+    }
+    .color{
+        height: 140px;
+    }
+    h1{
+        font-size: 2rem;
+    }
+
+}
