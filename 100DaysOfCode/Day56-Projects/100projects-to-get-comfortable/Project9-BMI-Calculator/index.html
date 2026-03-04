@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- This is a body mass index calculator that measure that if a person is at healthy weight respected to their height  -->
+
+    <!-- so what do we need a card layout containing age,gender, height and weight, submit button  -->
+
+    <div class="container">
+        <div class="box">
+            <h1>BMI calculator</h1>
+            <div class="content">
+                <div class="input-card main-input">
+                    <label for="age">AGE</label>
+                    <input type="number" id="age" autocomplete="off" required>
+                </div>
+
+                <div class="gender-selection">
+                    <label class="radio-container">
+                        <input type="radio" name="gender" id="male">
+                        <span class="text">Male</span>
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="gender" id="female">
+                        <span class="text">Female</span>
+                    </label>
+                </div>
+
+                <div class="containerhw">
+                    <div class="input-card">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" required>
+                    </div>
+
+                    <div class="input-card">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" required>
+                    </div>
+                    
+                    <button class="calculate" id="submit" onclick="calculate()">Calculate BMI</button>
+
+                    <div class="result-section">
+                        <p>Your BMI is</p>
+                        <div id="result-display">00.00</div>
+                        <p class="comment" id="comment-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mymodel" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modaltext"></p>
+        </div>
+    </div>
+</body>
+
+</html>
