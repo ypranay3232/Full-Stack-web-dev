@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0e3eb;
+}
+.container{
+    position: relative;
+    max-width: 38rem;
+    width: 100%;
+    padding: 1.25rem 2.5rem 2.5rem;
+    background: #fff;
+    box-shadow: 0 0.75rem 1.3rem rgba(0, 0, 0, 0.5);
+}
+.display{
+    height: 10rem;
+    width: 100%;
+    margin-bottom: 1.4rem;
+    font-size: 4rem;
+    /* remove the outline and on calc we have numbers sticked to right side  */
+    border: none;
+    text-align: right;
+    margin-bottom: 1.3rem;
+    font-size: 4rem;
+    color: black;
+    /* no selections should happen in display */
+    pointer-events: none;
+}
+.buttons{
+    /* we use grid here to stack multiple elements  */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1.35rem;
+}
+.buttons button{
+    padding: 1.2rem;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1.5rem;
+    background-color: #eee;
+    cursor: pointer;
+}
+.buttons button:active{
+    transform: scale(0.99);
+}
+.operator{
+    color: #2f9fff;
+}
