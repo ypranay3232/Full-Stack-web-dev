@@ -1,5 +1,7 @@
 # Death Note: The Narrative Story Experience 📓🍎🕊️
 
+**Live Demo: [deathnote-narrative-slider.netlify.app](https://deathnote-narrative-slider.netlify.app/)**
+
 [![Build Status](https://img.shields.io/badge/UX-Premium-8B0000)](https://github.com/ypranay3232/Full-Stack-web-dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
