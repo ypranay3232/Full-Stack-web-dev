@@ -1,4 +1,4 @@
-# Death Note: The Narrative Story Experience 📓🍎🕊️
+# Death Note: The Narrative Story Experience 📓🍎
 
 **Live Demo: [deathnote-narrative-slider.netlify.app](https://deathnote-narrative-slider.netlify.app/)**
 
