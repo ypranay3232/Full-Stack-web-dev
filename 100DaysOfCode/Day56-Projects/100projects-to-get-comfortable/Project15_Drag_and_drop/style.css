@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: skyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left, .right, .middle{
+    width: 45rem;
+    min-height: 38rem;
+    margin: 3rem;
+    border: 0.2rem dashed white;
+}
+.list{
+    background: #CBBBA0;
+    height: 7.5rem;
+    margin: 3.75rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: grab;
+    justify-content: center;
+}
