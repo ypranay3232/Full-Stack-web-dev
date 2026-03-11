@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character counter </title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Character count</h1>
+        <textarea id="text-input" class="form-control mb-3" placeholder="Enter Text..."
+            oninput="characterCounter(this)"></textarea>
+        <p class="counter text-muted">Character :
+            <span id="char-count">0</span>
+        </p>
+    </div>
+</body>
+
+</html>
