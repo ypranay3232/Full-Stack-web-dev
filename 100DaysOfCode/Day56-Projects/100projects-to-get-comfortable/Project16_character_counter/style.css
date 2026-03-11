@@ -38,6 +38,28 @@ textarea {
 }
 
 .text-danger {
-    color: red !important;
+    color: #dc3545 !important;
     font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#clear-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#clear-btn:hover {
+    background-color: #495057;
 }

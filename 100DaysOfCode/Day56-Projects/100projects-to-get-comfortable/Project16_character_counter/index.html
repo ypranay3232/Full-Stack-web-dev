@@ -12,11 +12,14 @@
 <body>
     <div class="container">
         <h1>Character count</h1>
-        <textarea id="text-input" class="form-control mb-3" placeholder="Enter Text..."
-            oninput="characterCounter(this)"></textarea>
-        <p class="counter text-muted">Character :
-            <span id="char-count">0</span>
-        </p>
+        <textarea id="text-input" class="form-control mb-3" placeholder="Enter Text..." maxlength="50"></textarea>
+
+        <div class="controls">
+            <p class="counter text-muted">Character:
+                <span id="char-count">0</span> / 50
+            </p>
+            <button id="clear-btn">Clear Text</button>
+        </div>
     </div>
 </body>
 
