@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Modal</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="container">
+        <button id="open-btn" class="btn btn-primary">Open Popup</button>
+    </main>
+
+    <div id="modal-overlay" class="overlay" aria-hidden="true">
+
+        <section class="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-desc">
+            <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+            
+            <h2 id="modal-title">Success!</h2>
+            
+            <p id="modal-desc">Your action has been completed successfully. You can now proceed.</p>
+            
+            <button id="close-btn" class="btn btn-dismiss">Dismiss</button>
+        </section>
+
+    </div>
+
+</body>
+</html>
