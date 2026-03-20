@@ -1,0 +1,71 @@
+*{
+  font-family: "SN Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+body{
+    background: url(./assets/assets/bg.jpg);
+    width: 100%;
+    height: 100dvh;/*helps to fill the image height completely to the screen*/
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+body::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    background: rgb(0, 0, 0,0.15);
+    backdrop-filter: blur(2rem);
+}
+
+/* styling the container card */
+.main-container{
+    border: solid;
+    width: 30rem;
+    height: 39rem;
+    z-index: 1;
+    background: linear-gradient(to top,rgb(0,0,0,0.20), rgb(255,255,255,0.20));
+    backdrop-filter: blur(12.5rem);
+    padding: 2.5rem;
+}
+
+.city-input{
+    width: 90%;
+    padding: 1.25rem 2rem;
+    border-radius: 12.5rem;
+    border: 0.5rem solid transparent;
+    background: rgb(0, 0, 0,0.20);
+    outline: none;
+    font-weight: 500;
+    transition: 0.25s border ;
+}
+.city-input:focus{
+    border: 0.45rem solid rgba(0, 0, 0, 0.15);
+}
+
+.city-input::placeholder{
+    color: rgb(255, 255, 255,0.75);
+}
+
+.search-btn{
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    display: flex;
+    border: none;
+    cursor: pointer;
+}
+
+.input-container{
+    position: relative;
+}
