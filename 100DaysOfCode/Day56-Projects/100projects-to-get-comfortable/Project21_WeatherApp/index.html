@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather app </title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- first we need a container/card layout for weather -->
+  <div class="container">
+    <!-- inside it we have search bar -->
+    <div class="searchbar">
+      <!-- inside the parent class add a input field and a search icon  -->
+      <input id="city" type="text" placeholder="Enter your city" spellcheck="false">
+      <button>
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+
+    <!-- main content of weather (display weather) -->
+    <div class="weather">
+      <img src="img/weather1.png" alt="weather icon" class="weather-icon">
+      <!-- styling the data which is generated dynamically  -->
+      <h1 class="temp">0</h1>
+      <h2 class="city">city</h2>
+      <!-- more details -->
+      <div class="details">
+        <!-- in columns -->
+        <div class="col">
+          <img src="img/weather.png" alt="weather-icon">
+          <div>
+            <p class="humidity">0%</p>
+            <p>humidity</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <img src="img/wind.png" alt="wind-icon">
+          <div>
+            <p class="wind">0 km/h</p>
+            <p>wind speed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
