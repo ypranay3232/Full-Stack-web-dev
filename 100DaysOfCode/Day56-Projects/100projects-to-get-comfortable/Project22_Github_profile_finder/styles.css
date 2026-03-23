@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0d1117;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+.search button {
+    padding: 10px 15px;
+    background: #238636;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #161b22;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.user:hover {
+    background: #30363d;
+}
+
+.profile {
+    margin-top: 30px;
+    padding: 20px;
+    background: #161b22;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Additional UI Enhancements */
+/* Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #58a6ff;
+    animation: spin 1s ease-in-out infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error UI */
+.error-ui {
+    color: #ff7b72;
+    background: rgba(255, 123, 114, 0.1);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 123, 114, 0.4);
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Repositories List */
+.repos-list {
+    margin-top: 20px;
+    text-align: left;
+    border-top: 1px solid #30363d;
+    padding-top: 15px;
+}
+
+.repos-list h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #c9d1d9;
+}
+
+.repo-item {
+    background: #0d1117;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: block;
+    color: #58a6ff;
+    text-decoration: none;
+    border: 1px solid #30363d;
+    transition: background 0.2s ease;
+}
+
+.repo-item:hover {
+    background: #21262d;
+}
+
+.github-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #238636;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.github-link:hover {
+    background-color: #2ea043;
+}
