@@ -1,4 +1,4 @@
-const APIKEY = "d54b108e96c80d6717d844eba8dad9a6"
+// APIKEY is loaded from config.js (see config.example.js for setup)
 const URL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 // now select the html elements search box, btn, update the container so we need 3
