@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search APP</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="config.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <!-- This is also a same type of project -->
+     <div class="container" id="mainContainer">
+        <h1 id="mainTitle">Discover Movies</h1>
+
+         <!-- search bar -->
+         <div class="search" id="searchWrapper">
+            <input type="text" id="searchInput" placeholder="Search Movies....">
+            <button id="searchBtn">Search</button>
+         </div>
+
+         <div id="contentSection" class="hidden">
+             <!-- Top Match -->
+             <div class="results-container">
+                 <h2>Top Match</h2>
+                 <div class="results" id="topMatchContainer"></div>
+             </div>
+             
+             <!-- Similar Titles -->
+             <div class="recommendations-container hidden" id="recContainer">
+                 <h2>Similar Titles</h2>
+                 <div class="recommendations" id="recommendations"></div>
+             </div>
+         </div>
+
+         <!-- Modal for full details -->
+         <div id="movieModal" class="modal hidden">
+             <div class="modal-content">
+                 <span class="close-btn" id="closeModal">&times;</span>
+                 <div id="modalBody"></div>
+             </div>
+         </div>
+     </div>
+</body>
+</html>
