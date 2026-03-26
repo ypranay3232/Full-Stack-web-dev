@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheerUp AI | futuristic Humor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main-card">
+        <!-- step 1 : know user mood -->
+        <div id="step-1">
+            <h1>Hello Human !</h1>
+            <p>So How's your Day ? </p>
+            <!-- options to choose from as a response -->
+            <div class="resp">
+                <button class="btn-primary" onclick="happyExit()">Great !</button>
+                <button class="btn-secondary" onclick="goToStep(2)">Bad 🫠</button>
+            </div>
+        </div>
+
+        <div id="step-2" class="hidden">
+            <h1>Please select a language </h1>
+            <select id="lang-select">
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="Dutch">Dutch</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Telugu">Telugu</option>
+            </select>
+            <button class="btn-primary" style="width: 100%;" onclick="fetchJoke()">Continue..</button>
+        </div>
+
+        <div id="step-3" class="hidden">
+            <h1>Feedback</h1>
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+            </div>
+            <div id="joke-display"></div>
+            <p>Analyze response quality:</p>
+            <div class="btn-group">
+                <button class="btn-outline" onclick="refineJoke('bad')">Cant Laugh 👎</button>
+                <button class="btn-outline" onclick="refineJoke('ok')">Okay okay 😐</button>
+                <button class="btn-primary" onclick="refineJoke('good')">Excellent 😂</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
