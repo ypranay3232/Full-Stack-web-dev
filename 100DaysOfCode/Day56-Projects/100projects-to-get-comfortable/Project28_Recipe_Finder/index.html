@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder | Delicious Meals</title>
+    <!-- Using Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header which acts as a container which has selecting items and input, search btn -->
+        <header>
+            <h1>🍽️ Recipe Finder</h1>
+            <p>Discover delicious recipes from around the world</p>
+            <div class="search-box">
+                <select id="searchType">
+                    <option value="name">Meal Name</option>
+                    <option value="ingredient">Main Ingredient</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Search (e.g. Chicken, Pasta)..." autocomplete="off">
+                <button id="searchBtn">Search</button>
+            </div>
+        </header>
+
+        <!-- Loading State -->
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>Cooking up results...</p>
+        </div>
+
+        <!-- Recipe Results -->
+        <div id="recipeGrid" class="recipe-grid"></div>
+        
+        <!-- Error / Empty State -->
+        <div id="messageBox" class="message-box hidden"></div>
+    </div>
+</body>
+</html>
