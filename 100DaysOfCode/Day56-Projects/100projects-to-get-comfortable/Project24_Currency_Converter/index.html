@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <!-- To build a currency converter we need a container that holds all elements  -->
+    <div class="container">
+        <h1>Currency converter</h1>
+
+        <input type="number" id="amount" placeholder="Enter the amount">
+
+        <!-- we have attach exchange currency manually in list then fetch rates dynamically . -->
+
+        <!-- dynamic fetching of currency  -->
+         <div class="dropdown">
+            <select id="fromcurrency" class="fromcurrency"></select>
+            <select id="tocurrency" class="tocurrency"></select>
+         </div>
+
+         <!-- convert them with js function -->
+          <button onclick="convertcurrency()">Convert</button>
+
+          <!-- now display the results :  -->
+           <h2 id="results">Results : </h2>
+    </div>
+</body>
+</html>
