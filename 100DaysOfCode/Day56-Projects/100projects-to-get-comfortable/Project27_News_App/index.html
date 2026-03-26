@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div class="news-container">
+        <h2>Latest News</h2>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search topic">
+            <button onclick="getnews()">Search</button>
+        </div>
+        <!-- news will be fetched dynamically -->
+        <div class="newsList"></div>
+    </div>
+</body>
+
+</html>
