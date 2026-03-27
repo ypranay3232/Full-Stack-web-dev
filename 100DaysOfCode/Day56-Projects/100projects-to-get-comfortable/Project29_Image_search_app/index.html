@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search App </title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <!-- A image search with infinite scroll feature -->
+    <div class="app-container">
+        <header>
+            <h1>📸 Wikimedia Image Search</h1>
+            <p>Discover stunning high-resolution photography</p>
+            <form id="searchForm" class="search-box">
+                <input type="text" id="searchInput" placeholder="Search images (e.g. Nature, Abstract)..."
+                    autocomplete="off" required>
+                <button type="submit" id="searchBtn">Search</button>
+            </form>
+        </header>
+
+        <!-- Loading State -->
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>Loading inspiration...</p>
+        </div>
+
+        <!-- Images Grid -->
+        <div id="imageGrid" class="image-grid"></div>
+        <div id="messageBox" class="message-box hidden"></div>
+        <button id="showMoreBtn" class="show-more-btn hidden">Load More Images</button>
+    </div>
+</body>
+
+</html>
