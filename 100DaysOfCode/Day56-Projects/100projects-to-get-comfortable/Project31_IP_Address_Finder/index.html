@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium IP address finder tool">
+    <title>IP Address Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <main class="container">
+        <header>
+            <h1>IP Finder</h1>
+            <p>Discover details about any IP address worldwide.</p>
+        </header>
+
+        <section class="search-container">
+            <form id="ipForm">
+                <div class="input-group">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <!-- Search input for IP address -->
+                    <input type="text" id="ipInput" placeholder="Enter IP Address (e.g. 8.8.8.8)" autocomplete="off">
+                </div>
+                <button type="submit" id="searchBtn">Search</button>
+            </form>
+            <button id="myIpBtn" class="secondary-btn">Find My IP</button>
+        </section>
+
+        <!-- Loading -->
+        <div class="loader-container hidden" id="loader">
+            <div class="spinner"></div>
+            <p>Fetching data...</p>
+        </div>
+
+        <div class="error-container hidden" id="errorMessage">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <p id="errorText">Failed to resolve IP details. Please check and try again.</p>
+        </div>
+
+        <!-- Results -->
+        <section class="result-container hidden" id="resultContainer">
+            <div class="glass-card">
+                <div class="ip-header">
+                    <h2><ion-icon name="globe-outline"></ion-icon> <span id="resIp">8.8.8.8</span></h2>
+                    <span class="badge" id="resType">IPv4</span>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <p class="label">Location</p>
+                        <p class="value" id="resLocation">Mountain View, California, US</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Timezone</p>
+                        <p class="value" id="resTimezone">America/Los_Angeles</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">ISP</p>
+                        <p class="value" id="resIsp">Google LLC</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">ASN</p>
+                        <p class="value" id="resAsn">AS15169</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
