@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Username Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="generator-card">
+            <h1>Username Generator</h1>
+            <p class="subtitle">Find your next online identity.</p>
+            
+            <div class="result-container">
+                <div id="username-display" class="username-display">Click generate to start</div>
+                <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+                    <i class="ri-file-copy-line"></i>
+                </button>
+            </div>
+            
+            <div class="options-container">
+                <label class="toggle">
+                    <input type="checkbox" id="include-numbers" checked>
+                    <span class="slider"></span>
+                    <span class="label-text">Include Numbers</span>
+                </label>
+                <label class="toggle">
+                    <input type="checkbox" id="include-special">
+                    <span class="slider"></span>
+                    <span class="label-text">Include Special Chars (- _ .)</span>
+                </label>
+            </div>
+
+            <button id="generate-btn" class="primary-btn">Generate Username</button>
+        </div>
+        
+        <div id="toast" class="toast">Copied to clipboard!</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
