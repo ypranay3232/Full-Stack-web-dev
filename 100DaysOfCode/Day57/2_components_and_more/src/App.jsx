@@ -17,6 +17,8 @@ function Section({ count, setCount }) {
 
   return (<section id="center">
     <div className="hero">
+
+      {/* Same here we Omit images Dynamically so that even in build process the images stays same : so go to assets --> copy img and import it here and use them here */}
       <img src={heroImg} className="base" width="170" height="179" alt="" />
       <img src={reactLogo} className="framework" alt="React logo" />
       <img src={viteLogo} className="vite" alt="Vite logo" />
