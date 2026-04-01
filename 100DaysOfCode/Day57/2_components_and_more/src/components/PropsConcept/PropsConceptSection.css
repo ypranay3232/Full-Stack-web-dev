@@ -1,0 +1,49 @@
+#Props_concept {
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: #140524;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+#Props_concept h2 {
+  color: var(--text-h);
+  margin-bottom: 24px;
+}
+
+#Props_concept ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#Props_concept li {
+  flex: 1 1 200px;
+  background-color: var(--code-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#Props_concept li img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+#Props_concept li h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+#Props_concept li p {
+  font-size: 0.9rem;
+  color: var(--text);
+}
