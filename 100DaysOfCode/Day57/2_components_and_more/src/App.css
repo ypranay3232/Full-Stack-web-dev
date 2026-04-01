@@ -29,3 +29,62 @@
   right: 0;
   border-right-color: var(--border);
 }
+
+/* Tabs section styling */
+#Tabs {
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+#Tabs menu {
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+#Tabs menu button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--social-bg);
+  color: var(--text-h);
+  font-family: var(--sans);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#Tabs menu button:hover {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+}
+
+#Tabs menu button.active {
+  background-color: var(--accent);
+  color: white;
+}
+
+#tab-content {
+  padding: 1.5rem;
+  border-radius: 6px;
+  background-color: var(--code-bg);
+  box-shadow: var(--shadow);
+}
+
+#tab-content h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+#tab-content pre {
+  background-color: #1a1a1a;
+  color: #a6accd;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
