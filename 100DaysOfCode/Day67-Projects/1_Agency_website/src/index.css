@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Manrope:wght@200..800&display=swap');
+
+@import "tailwindcss";
+
+body {
+    font-family: "Manrope", sans-serif;
+}
+
+/* This will be the primary color for the webpage */
+@theme {
+    --font-gravitas: "Gravitas One", serif;
+    --font-manrope: "Manrope", sans-serif;
+    --color-primary: #5044E5;
+}
+@custom-variant dark (&:where(.dark,.dark *))
