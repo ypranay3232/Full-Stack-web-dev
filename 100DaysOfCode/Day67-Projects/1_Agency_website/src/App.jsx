@@ -3,6 +3,8 @@ import NavBar from './components/NavBar'
 import CustomCursor from './components/CustomCursor'
 import Hero from './components/Hero'
 import Trustedby from './components/Trustedby'
+import Services from './components/Services'
+import OurWork from './components/OurWork'
 
 const App = () => {
 
@@ -15,6 +17,8 @@ const App = () => {
       <NavBar theme={theme} setTheme={setTheme} />
       <Hero/>
       <Trustedby/>
+      <Services/>
+      <OurWork/>
     </div>
   )
 }
