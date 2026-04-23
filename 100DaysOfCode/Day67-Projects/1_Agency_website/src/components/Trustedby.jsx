@@ -1,5 +1,4 @@
 import React from 'react'
-import assets from '../assets/assets'
 import { company_logos } from '../assets/assets'
 
 const Trustedby = () => {
