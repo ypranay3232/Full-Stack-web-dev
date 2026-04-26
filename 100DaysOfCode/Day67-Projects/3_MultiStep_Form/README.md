@@ -1,75 +1,69 @@
-# React + TypeScript + Vite
+# Multi-Step Form Project (Day 67)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based multi-step form implementation. It demonstrates how to handle a complex form by breaking it into multiple progressive steps (Personal Info, Address Info, Billing Info) while maintaining a single, unified form state under the hood.
 
-Currently, two official plugins are available:
+## Architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+USER ---> 3 stages
+  ├── Personal Info  
+  ├── Address Info
+  └── Billing Info
+         │
+         ▼
+[React Hook Form] --> Validation via [Zod] --> Evaluated against [Custom Hook]
+         │
+         ▼
+Data Stored ---> Next step/Submit button --> Go to component, check progress. 
+If we are on the last step, show the success/submitted screen.
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Key Concept:** Even though the user sees the form in multiple pieces, when submitted, a single payload containing all the information is generated. This is a very common interview question pattern.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Tech Stack
+- **React (Vite + TypeScript)**
+- **Tailwind CSS V4**
+- **Shadcn UI** (Component library for UI)
+- **React Hook Form** (Form state management)
+- **Zod** (Schema validation)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Installation & Setup Guide
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Tailwind CSS & Shadcn Setup:**
+   The project uses `@tailwindcss/vite` and Shadcn UI.
+   ```bash
+   npm install tailwindcss @tailwindcss/vite
+   npx shadcn@latest init
+   ```
+   Add the following alias config to `vite.config.ts`, `tsconfig.json`, and `tsconfig.app.json` for Shadcn path resolution:
+   ```json
+   "compilerOptions": {
+     "baseUrl": ".",
+     "paths": {
+       "@/*": ["./src/*"]
+     }
+   }
+   ```
+
+3. **Required Shadcn Components:**
+   ```bash
+   npx shadcn@latest add card button input label
+   ```
+
+4. **Form Management & Validation:**
+   ```bash
+   npm install react-hook-form zod @hookform/resolvers
+   ```
+
+## Development Workflow
+
+1. Define the validation schemas for each step using `zod` in `src/lib/types.ts`.
+2. Generate TypeScript types by inferring from the Zod schemas (`z.infer<typeof schema>`).
+3. Build a Custom Hook (`src/Hooks/use-multistep-form.tsx`) to handle the step progression, tracking `currentStepIndex`, `isFirstStep`, and `isLastStep`.
+4. Create the main `MultiStepForm` component that renders different fields conditionally based on the current step.
+5. Use `react-hook-form`'s `trigger()` to validate only the current step's fields before allowing progression to the next step.
