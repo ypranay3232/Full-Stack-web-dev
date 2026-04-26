@@ -1,7 +1,8 @@
+import MultiStepForm from "./components/ui/MultiStepForm"
+
 function App() {
-  return (
-    <div>I think its Hello </div>
-  )
+  return <MultiStepForm/>
+
 }
 
 export default App
