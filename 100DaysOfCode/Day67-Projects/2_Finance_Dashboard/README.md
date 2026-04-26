@@ -1,8 +1,8 @@
-# Finance Dashboard 📈
+# Finance Dashboard 
 
 A modern, responsive, and fully functional Finance Dashboard built with React and Tailwind CSS. This project features a clean user interface with interactive charts, dynamic routing, and seamless Light/Dark mode toggling.
 
-## 🚀 Features
+## Features
 
 - **Interactive Analytics**: Beautiful, responsive charts for sales dynamics, user activity, and subscriptions.
 - **Dynamic Theming**: Full support for both Light and Dark modes with smooth transitions.
@@ -10,7 +10,7 @@ A modern, responsive, and fully functional Finance Dashboard built with React an
 - **Responsive Design**: Optimized for various screen sizes, ensuring a great experience on desktops and tablets.
 - **Modern UI Components**: Custom-styled stat cards, progress rings, and data tables.
 
-## 🛠️ Tech Stack & Libraries
+## Tech Stack & Libraries
 
 This project leverages modern web technologies to deliver a fast and maintainable application:
 
@@ -24,7 +24,7 @@ This project leverages modern web technologies to deliver a fast and maintainabl
 - **[Lucide React](https://lucide.dev/)**: Beautiful and consistent icon toolkit used throughout the dashboard (Sidebar, Header, Stat Cards).
 - **[React Router DOM](https://reactrouter.com/)**: Standard routing library for React, handling client-side navigation between different dashboard views.
 
-## 🎨 UI & Design Highlights
+## UI & Design Highlights
 
 - **Color Palette**: Carefully selected colors to differentiate metrics (Green for Orders, Blue for Approved, Orange for Month total, Purple for Revenue).
 - **Dark Mode**: Configured using Tailwind's custom variant (`@custom-variant dark`), utilizing deep grays and purples (`#1f2128`, `#13141a`) to reduce eye strain while maintaining contrast.
@@ -34,7 +34,7 @@ This project leverages modern web technologies to deliver a fast and maintainabl
   - `StatPieCard` & `SalesChart`: Utilizes Recharts with custom tooltips and responsive containers.
   - `CustomerOrder`: A clean, formatted table for displaying recent transactions.
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository:**
    ```bash
@@ -57,7 +57,7 @@ This project leverages modern web technologies to deliver a fast and maintainabl
    npm run build
    ```
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -75,7 +75,7 @@ src/
 └── main.jsx                 # Application entry point
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/finance-dashboard/issues).
 
