@@ -7,6 +7,7 @@
   "type": "commonjs",
   "main": "Practice.js",
   "scripts": {
+    "demo" : " This is something ",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
