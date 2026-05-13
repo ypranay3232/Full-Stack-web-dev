@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App with ejs</title>
+    <!-- im using tailwind cdn for quick setup rather than installing it entirely -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    
+    <div class="main w-full min-h-screen bg-zinc-900">
+        <!-- This is for the form card layout  -->
+        <div class="form p-10 text-white">
+            <form action="/create" method="POST">
+                <input name="title" class="block px-5 py-2 mt-2 w-full rounded-md bg-zinc-800 outline-none" type="text" placeholder="Enter title" required>
+                <textarea name="details" class="block px-5 py-2 mt-2 w-full h-50 rounded-md outline-none bg-zinc-800 resize-none" placeholder="Enter your Task details" required></textarea>
+                <input class="bg-blue-600 mt-2 px-5 py-2 rounded-md cursor-pointer hover:bg-blue-700 transition-colors" type="submit" value="Create Task">
+            </form>
+        </div>
+
+        <!-- This is for the task layout same contains title,desc but we handle it with a link to read more about the task -->
+         <!-- using flex and gap for layout and flex wrap so next cards can start in new line  -->
+        <div class="tasks p-10 flex gap-3 flex-wrap">
+            <% if(files.length > 0) { %>
+                <% files.forEach(function(file){ %>
+                    <div class="task w-72 px-3 py-4 bg-zinc-800 rounded-md ">
+                        <h3 class="text-white text-3xl tracking-tight "><%= file.replace('.txt', '') %></h3>
+                        <div class="flex items-center gap-3 mt-3">
+                            <a href="/task/<%= file %>" class="text-blue-500 hover:text-blue-400 transition-colors inline-block">Read more...</a>
+                            <a href="/edit/<%= file %>" class="text-blue-500 hover:text-blue-400 transition-colors inline-block">Edit</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <!-- what to display when we have no tasks ?  -->
+                <h3 class="text-zinc-600 ">No tasks yet..</h3>
+            <% } %>
+        </div>
+
+        <!-- now we display all the tasks from the folder we have "Tasks" so to know if tasks are available or not we first read then from index.js  -->
+
+    </div>
+
+</body>
+
+</html>

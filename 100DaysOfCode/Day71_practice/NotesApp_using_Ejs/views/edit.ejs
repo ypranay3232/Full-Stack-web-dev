@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <!-- im using tailwind cdn for quick setup rather than installing it entirely -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="main w-full min-h-screen bg-zinc-900 text-white p-10">
+        <a href="/" class="text-blue-500 mb-5 inline-block hover:text-blue-400 transition-colors">&larr; Back to Home</a>
+        <h1 class="text-5xl mb-5 tracking-tight">Edit Task</h1>
+        
+        <div class="form mt-5">
+            <form action="/edit" method="POST">
+                <input type="hidden" name="previous" value="<%= filename %>">
+                <input name="title" value="<%= filename.replace('.txt', '') %>" class="block px-5 py-2 mt-2 w-full max-w-2xl rounded-md bg-zinc-800 outline-none" type="text" placeholder="Enter title" required>
+                <textarea name="details" class="block px-5 py-2 mt-2 w-full max-w-2xl h-50 rounded-md outline-none bg-zinc-800 resize-none" placeholder="Enter your Task details" required><%= fileData %></textarea>
+                <input class="bg-blue-600 mt-2 px-5 py-2 rounded-md cursor-pointer hover:bg-blue-700 transition-colors" type="submit" value="Update Task">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
