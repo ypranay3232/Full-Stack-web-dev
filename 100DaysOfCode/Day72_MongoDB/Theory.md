@@ -49,3 +49,6 @@ MongoDB uses specific terminology to define its data hierarchy. Understanding ho
 1. **Connect:** Set up a connection to the Database (`mongoose.connect`).
 2. **Structure:** Define the shape of your data and create a Collection via a Schema & Model (`mongoose.model`).
 3. **Insert:** Add individual entries to the Collection by creating Documents (`Model.create`).
+
+### Installation :
+1. **MongoDb Community Server :** go to mongodb community server and install the compass. And setup environment variables.  
