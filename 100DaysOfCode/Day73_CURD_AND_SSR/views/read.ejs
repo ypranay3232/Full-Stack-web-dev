@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 73 CRUD & SSR</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full min-h-screen bg-zinc-900 p-10  text-white">
+        <div class="nav">
+            <a href="/" class="text-blue-500">Back to home</a>
+        </div>
+        <h1 class="text-3xl tracking-tighter mb-3">All users</h1>
+        <div class="users flex gap-5 flex-wrap">
+            <!-- when we add multiple users next user will be displayed below this user so to fix add flex, gap and flex wrap to parent (users) -->
+
+            <!-- <div class="user w-72 p-4 bg-zinc-800 rounded-lg"> -->
+            <!-- bg layout for image -->
+            <!-- <div class="w-full h-52 rounded-lg bg-zinc-700"></div> -->
+            <!-- user name and email will be shown here -->
+            <!-- <h3 class="text-xl mt-3 tracking-tighter">User1</h3> -->
+            <!-- <h5 class="text-zinc-500 ">userdemo1@gmail.com</h5> -->
+            <!-- edit and delete user buttons -->
+            <!-- <div class="flex gap-3 mt-10"> -->
+            <!-- <a href="" class="text-zinc-300">Edit User</a> -->
+            <!-- <a href="" class="text-red-500">Delete User</a> -->
+            <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- commented the user layout because we make it dynamic -->
+            <% users.forEach(function(e){%>
+                <div class="user w-72 p-4 bg-zinc-800 rounded-lg">
+                    <!-- bg layout for image -->
+                    <div class="w-full h-72 rounded-lg bg-zinc-700 overflow-hidden">
+                        <!-- added dynamic image -->
+                        <img class="w-full h-full object-cover object-center" src="<%= e.image %>" alt="<%= e.name %>">
+                    </div>
+                    <!-- user name and email will be shown here -->
+                    <!-- added dynamic name -->
+                    <h3 class="text-xl mt-3 tracking-tighter"><%= e.name %></h3>
+                    <!-- added dynamic email -->
+                    <h5 class="text-zinc-500 "><%= e.email %></h5>
+                    <!-- edit and delete user buttons -->
+                    <div class="flex gap-3 mt-10">
+                        <a href="/edit/<%= e._id %>" class="text-zinc-300">Edit User</a>
+                        <a href="/delete/<%= e._id %>" class="text-red-500">Delete User</a>
+                    </div>
+                </div> <!-- added missing closing div for .user -->
+            <% })%>
+        </div>
+    </div>
+</body>
+
+</html>
