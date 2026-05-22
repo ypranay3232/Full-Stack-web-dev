@@ -1,5 +1,9 @@
 const express = require('express')
+
+// to use cookies
 const cookieParser = require('cookie-parser')
+// to use bcrypt 
+const bcrypt = require('bcrypt')
 const app = express()
 
 app.use(cookieParser())
@@ -19,6 +23,17 @@ app.get("/loginpage",(req,res)=>{
     res.send("from login page")
     // because cookies are sent to all routes we can read them using cookie parser 
     console.log(req.cookies)
+})
+// bcrypt works as : so first we create a salt(a string )then we create a hash which helps to secure the password then we mix the salt and hash. so the password can never be decrypted
+
+app.get("/salt",(req,res)=>{
+    bcrypt.genSalt(10,(err,salt)=>{
+        bcrypt.hash("hello password",salt,(err,hash)=>{
+            // this generated hash can be stored in db
+            console.log(salt); //when you go to localhost:3000/bcrypt you can see the hash in console
+            
+        })
+    })
 })
 
 app.listen(3000)
