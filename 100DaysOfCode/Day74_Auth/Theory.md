@@ -183,3 +183,47 @@ app.get("/get-cookie", (req, res) => {
 
 app.listen(3000, () => console.log("Server running on port 3000"));
 ```
+
+
+## 6. Deep Dive: What is a JSON Web Token (JWT)?
+
+> [!NOTE]
+> **JWT (JSON Web Token)** is a compact and self-contained way of securely transmitting information between parties as a JSON object. It is digitally signed, making it highly secure and tamper-proof.
+
+### A. The 3 Parts of a JWT
+A JWT is represented as a string split into three parts separated by dots (`.`):
+`header.payload.signature`
+
+1. **Header (Algorithm & Token Type)**
+   * Contains metadata about the token, typically the type of token (`JWT`) and the signing algorithm being used (such as `HMAC SHA256` or `RSA`).
+   * *Example:* `{"alg": "HS256", "typ": "JWT"}`
+2. **Payload (Data We Store)**
+   * Contains the claims (information about the user, like user ID, email, roles, or any other non-sensitive data).
+   * *Example:* `{"userId": "12345", "email": "user@example.com"}`
+   * > [!WARNING]
+     > The payload is encoded (Base64Url), **not encrypted**. Anyone can decode it to view its contents, so **never** store sensitive secrets (like raw passwords) inside the payload!
+3. **Signature (The Security Guard)**
+   * Ensures that the token hasn't been altered along the way.
+   * Created by taking the encoded header, encoded payload, and signing them using a secret key (known only to the server) and the algorithm specified in the header.
+
+---
+
+### B. Detailed Workflow: How JWT Authentication Works
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as User Browser
+    participant Server as Express Server
+
+    User->>Server: Submits credentials (Username/Password)
+    Note over Server: Server verifies credentials against DB
+    Server->>Server: Generates JWT (Header + Payload signed with SECRET_KEY)
+    Server-->>User: Sends JWT back (stored in browser cookie)
+    
+    Note over User, Server: Subsequent Requests (Authorization)
+    User->>Server: Makes Request (Automatically attaches JWT Cookie)
+    Note over Server: Server decrypts & verifies JWT signature using SECRET_KEY
+    Server->>Server: Looks up Payload (e.g., extracts user email)
+    Server-->>User: Returns authorized response / requested data
+```
