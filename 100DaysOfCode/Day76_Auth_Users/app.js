@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 
+// importing the usermodel 
+const usermodel = require('./models/usermodel')
+
 const cookieParser = require('cookie-parser')
 const path = require('path')
 
