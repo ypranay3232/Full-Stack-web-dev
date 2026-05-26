@@ -20,5 +20,18 @@ app.get("/",(req,res)=>{
     // res.send("hello ")//when working with ejs we have to use render instead of send
     res.render("index.ejs")
 })
+// creating the user /creaTe route
+app.post("/create",async(req,res)=>{
+    // to create a user we have to pull data from the req.body
+    let {username,email,password, age } = req.body
+    let CreatedUser = await userModel.create({
+        username,
+        email,
+        password,
+        age
+    })
+    res.send(CreatedUser)
+
+})
 
 app.listen(3000)
