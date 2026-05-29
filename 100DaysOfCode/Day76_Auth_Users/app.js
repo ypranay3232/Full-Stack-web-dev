@@ -11,6 +11,9 @@ const path = require('path')
 const bcrypt = require('bcrypt')
 const { hash } = require('crypto')
 
+// Making login features via Token using JWT
+const jwt = require('jsonwebtoken')
+
 // add some middleware json and urlencoder
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -42,9 +45,20 @@ app.post("/create", (req, res) => {
                 password: hash,
                 age
             })
+
+            // generating a token and sending it as a cookie to browser 
+            let token = jwt.sign({email},"secretKey")
+            res.cookie("token",token)
+
             res.send(CreatedUser)
         })
     })
+})
+
+// now after adding a cookie now we can access any kind of protected route we can access it 
+app.get("/logout",(req,res)=>{
+    res.cookie("token","")//clearing token
+    res.redirect("/")
 })
 
 app.listen(3000)
