@@ -55,6 +55,27 @@ app.post("/create", (req, res) => {
     })
 })
 
+app.get("/login",(req,res)=>{
+    res.render("login")
+})
+
+
+// Adding login route
+app.post("/login",async (req,res)=>{
+    let user = await userModel.findOne({email:req.body.email})
+    if(!user) return res.send("something is wrong")
+
+    bcrypt.compare(req.body.password, user.password, (err,result)=>{
+        if(result){
+            let token = jwt.sign({email: user.email},"secretKey")
+            res.cookie("token",token)
+            res.redirect("/")
+        }else res.send("something is wrong")
+    })
+
+})
+
+
 // now after adding a cookie now we can access any kind of protected route we can access it 
 app.get("/logout",(req,res)=>{
     res.cookie("token","")//clearing token
