@@ -9,7 +9,14 @@ const userschema = mongoose.Schema({
     email:String,
     age:Number,
     // whenever we create a post we store them here in array, it contains id's from postmodel 
-    posts: Array
+    posts: [
+        // defining the posts type as ID inside an array (.i.e so post is an array of id's) 
+        {type: mongoose.Schema.Types.ObjectId,
+        // the id's belong to usermodel 
+            ref:'post'
+        }
+        
+    ]
 
 })
 

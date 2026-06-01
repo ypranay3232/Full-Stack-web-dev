@@ -5,7 +5,11 @@ const mongoose = require('mongoose')
 
 const postSchema = mongoose.Schema({
     postData:String,
-    user:String,
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        // The post is for usermodel so 
+        ref:'user'
+    },
     date:{
         type:Date,
         default:Date.now()
