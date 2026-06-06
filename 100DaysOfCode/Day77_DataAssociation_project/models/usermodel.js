@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
 
 mongoose.connect("mongodb://127.0.0.1:27017/Project")
+    .then(() => console.log("Connected to MongoDB successfully."))
+    .catch(err => {
+        console.error("❌ MongoDB connection error: Make sure MongoDB is running on your machine (127.0.0.1:27017)!");
+        console.error(err.message);
+    });
 
 const userSchema = mongoose.Schema({
     username:String,
@@ -9,6 +14,6 @@ const userSchema = mongoose.Schema({
     email:String,
     age:Number,
     //array of id's
-    posts:[{ type:mongoose.Schema.Types.Objectid, ref:"post"}],
+    posts:[{ type:mongoose.Schema.Types.ObjectId, ref:"post"}],
 })
 module.exports = mongoose.model('user',userSchema) 

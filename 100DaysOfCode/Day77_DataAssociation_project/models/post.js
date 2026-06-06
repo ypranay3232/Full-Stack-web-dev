@@ -2,12 +2,20 @@ const mongoose = require('mongoose')
 
 const postSchema = mongoose.Schema({
     user:{
-         type:mongoose.Schema.Types.Objectid, ref:"post",
+         type:mongoose.Schema.Types.ObjectId,
          ref:"user"
         },
-    content: string,
+    content: String,
     likes: [
         {type:mongoose.Schema.Types.ObjectId, ref:"user"}
+    ],
+    comments: [
+        {
+            user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+            username: String,
+            text: String,
+            createdAt: { type: Date, default: Date.now }
+        }
     ]
-})
-module.exports = mongoose.model('user',userSchema) 
+}, { timestamps: true })
+module.exports = mongoose.model('post',postSchema) 
