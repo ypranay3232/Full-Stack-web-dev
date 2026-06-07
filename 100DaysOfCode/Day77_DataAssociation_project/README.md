@@ -18,10 +18,11 @@ A modern, responsive full-stack developer social hub showcasing **Mongoose Data 
 1. **JWT-Based Authentication**: Custom auth middleware verifying user sessions via signed tokens.
 2. **Secure Passwords**: Password encryption using bcrypt salt generation and hashing.
 3. **Data Association**: Deep Mongoose reference links between users and posts.
-4. **Publish Posts**: Dynamic markdown-friendly feed rendering posts in reverse chronological order.
+4. **Publish Posts**: Dynamic feed rendering posts in reverse chronological order.
 5. **Like / Unlike Toggle**: Interactive visual likes counter.
 6. **Comments Section**: Collaborative sub-document comment threads on any post.
 7. **Author Privileges**: Secure ownership check so users can only edit or delete their own posts.
+8. **Profile Avatar Uploads**: Automated profile picture uploads using `multer` with a hover overlay for instant uploading.
 
 ---
 
@@ -124,3 +125,21 @@ let user = await usermodel.findOne({ email: req.user.email }).populate("posts");
 let posts = await postModel.find({ user: user._id }).populate("user").sort({ createdAt: -1 });
 ```
 This ensures that each user has their own private space and posts from different users do not collide!
+
+### 4. Multer Profile Picture Upload
+We use `multer` to handle multipart/form-data for profile picture uploads.
+* **Storage Configuration**: Files are saved to `./public/images/uploads/` with randomized names to prevent duplicate conflicts:
+  ```javascript
+  const storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+          cb(null, uploadDir)
+      },
+      filename: function (req, file, cb) {
+          crypto.randomBytes(12, (err, bytes) => {
+              const fn = bytes.toString("hex") + path.extname(file.originalname);
+              cb(null, fn);
+          });
+      }
+  })
+  ```
+* **Frontend Auto-Submit**: The user hovers over their initials avatar, clicks the overlay camera icon, which triggers a hidden `<input type="file">` file element. When a file is selected, the `onchange` event listener automatically submits the form, updating the user's profile image and reloading the dashboard instantly!
