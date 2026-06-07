@@ -118,9 +118,9 @@ await user.save();
 ```
 
 ### 3. Populating Query Results
-When rendering the feed, we use `.populate("user")` and `.populate("posts")` to join the associated user metadata:
+When rendering the user's personal feed, we use `.populate("user")` and filter the query to only fetch posts where the author is the currently logged-in user:
 ```javascript
 let user = await usermodel.findOne({ email: req.user.email }).populate("posts");
-let posts = await postModel.find().populate("user").sort({ createdAt: -1 });
+let posts = await postModel.find({ user: user._id }).populate("user").sort({ createdAt: -1 });
 ```
-This lets us access `post.user.name` and `post.user.username` directly inside the feed template!
+This ensures that each user has their own private space and posts from different users do not collide!
