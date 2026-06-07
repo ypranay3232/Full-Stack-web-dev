@@ -123,7 +123,7 @@ app.get("/logout", (req, res) => {
 app.get("/profile", isLoggedIn, async (req, res) => {
     try {
         let user = await usermodel.findOne({ email: req.user.email }).populate("posts");
-        let posts = await postModel.find().populate("user").sort({ createdAt: -1 });
+        let posts = await postModel.find({ user: user._id }).populate("user").sort({ createdAt: -1 });
         res.render("profile.ejs", { user, posts });
     } catch (err) {
         res.status(500).send(err.message);
