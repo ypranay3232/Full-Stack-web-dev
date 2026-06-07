@@ -6,13 +6,40 @@ const cookieParser = require("cookie-parser")
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 
+const path = require("path")
+const multer = require("multer")
+const crypto = require("crypto")
+const fs = require("fs")
+
 const JWT_SECRET = "shhhhhh"
+
+// Ensure public/images/uploads exists
+const uploadDir = path.join(__dirname, "public", "images", "uploads")
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true })
+}
+
+// Multer Storage Configuration
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, uploadDir)
+    },
+    filename: function (req, file, cb) {
+        crypto.randomBytes(12, (err, bytes) => {
+            if (err) return cb(err);
+            const fn = bytes.toString("hex") + path.extname(file.originalname);
+            cb(null, fn);
+        });
+    }
+})
+const upload = multer({ storage: storage })
 
 // setting up middleware
 app.set("view engine", "ejs")
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
+app.use(express.static(path.join(__dirname, "public")))
 
 // Middleware to check if user is logged in
 function isLoggedIn(req, res, next) {
@@ -244,6 +271,21 @@ app.post("/comment/:id", isLoggedIn, async (req, res) => {
         });
 
         await post.save();
+        res.redirect("/profile");
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+})
+
+// Profile Image Upload Route
+app.post("/upload/profile", isLoggedIn, upload.single("image"), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).send("No file uploaded");
+        }
+        let user = await usermodel.findOne({ email: req.user.email });
+        user.profileImage = req.file.filename;
+        await user.save();
         res.redirect("/profile");
     } catch (err) {
         res.status(500).send(err.message);
