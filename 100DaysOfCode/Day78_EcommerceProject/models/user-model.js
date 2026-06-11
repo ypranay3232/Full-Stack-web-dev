@@ -1,7 +1,3 @@
-const { arrayBuffer } = require('stream/consumers')
-
-mongoose.connect("mongoose://127.0.0.1:27017/Ecommerce_Store")
-
 const userSchema = mongoose.Schema({
     fullname: {
         type: String,
