@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatch Admin | Create Product</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col justify-between">
+    <!-- Navigation Bar -->
+    <nav class="w-full border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/shop" class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">SCATCH ADMIN</a>
+            
+            <div class="flex items-center gap-6">
+                <a href="/shop" class="text-sm font-medium text-zinc-300 hover:text-white transition-all">Back to Shop</a>
+                <a href="/logout" class="text-xs font-semibold px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-xl hover:bg-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white transition-all">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Form Container -->
+    <main class="w-full max-w-4xl mx-auto px-6 py-12 flex-1 flex flex-col justify-center">
+        <div class="bg-zinc-900/30 border border-zinc-900 p-8 md:p-10 rounded-2xl shadow-2xl">
+            
+            <div class="mb-8">
+                <span class="text-xs font-semibold uppercase tracking-widest text-blue-400">Owner Dashboard</span>
+                <h2 class="text-3xl font-bold text-white mt-1">Create New Product</h2>
+                <p class="text-xs text-zinc-500 mt-1">Upload files and define custom styles for the product card.</p>
+            </div>
+
+            <form action="/products/create" method="POST" enctype="multipart/form-data" class="space-y-6">
+                
+                <!-- Split columns -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Left Column: Specs -->
+                    <div class="space-y-4">
+                        <div>
+                            <label for="image" class="block text-xs font-medium text-zinc-400 mb-1.5 font-semibold uppercase tracking-wider">Product Image</label>
+                            <input 
+                                type="file" 
+                                name="image" 
+                                id="image" 
+                                required
+                                class="w-full text-sm text-zinc-400 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-zinc-900 file:text-zinc-200 file:hover:bg-zinc-800 cursor-pointer file:cursor-pointer border border-zinc-800 rounded-xl p-2 bg-zinc-950/50"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="name" class="block text-xs font-medium text-zinc-400 mb-1.5 font-semibold uppercase tracking-wider">Product Name</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                required 
+                                placeholder="Signature Leather Handbag" 
+                                class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+                            >
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="price" class="block text-xs font-medium text-zinc-400 mb-1.5 font-semibold uppercase tracking-wider">Price (₹)</label>
+                                <input 
+                                    type="number" 
+                                    name="price" 
+                                    id="price" 
+                                    required 
+                                    placeholder="4999" 
+                                    class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+                                >
+                            </div>
+                            <div>
+                                <label for="discount" class="block text-xs font-medium text-zinc-400 mb-1.5 font-semibold uppercase tracking-wider">Discount (₹)</label>
+                                <input 
+                                    type="number" 
+                                    name="discount" 
+                                    id="discount" 
+                                    placeholder="500" 
+                                    default="0"
+                                    class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Styling & Themes -->
+                    <div class="space-y-4">
+                        <div>
+                            <label for="bgcolor" class="block text-xs font-medium text-zinc-400 mb-1.5 font-semibold uppercase tracking-wider">Card Canvas Background Color</label>
+                            <div class="flex gap-3">
+                                <input 
+                                    type="color" 
+                                    id="bgcolor-picker" 
+                                    value="#3b82f6" 
+                                    class="w-12 h-12 bg-zinc-950 border border-zinc-800 rounded-xl p-1 cursor-pointer"
+                                    oninput="document.getElementById('bgcolor').value = this.value"
+                                >
+                                <input 
+                                    type="text" 
+                                    name="bgcolor" 
+                                    id="bgcolor" 
+                                    required 
+                                    value="#3b82f6" 
+                                    class="flex-1 px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+                                    oninput="document.getElementById('bgcolor-picker').value = this.value"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="placeholder" class="block text-xs font-medium text-zinc-400 mb-1.5 font-semibold uppercase tracking-wider">Details Panel Background Color</label>
+                            <div class="flex gap-3">
+                                <input 
+                                    type="color" 
+                                    id="placeholder-picker" 
+                                    value="#18181b" 
+                                    class="w-12 h-12 bg-zinc-950 border border-zinc-800 rounded-xl p-1 cursor-pointer"
+                                    oninput="document.getElementById('placeholder').value = this.value"
+                                >
+                                <input 
+                                    type="text" 
+                                    name="placeholder" 
+                                    id="placeholder" 
+                                    required 
+                                    value="#18181b" 
+                                    class="flex-1 px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+                                    oninput="document.getElementById('placeholder-picker').value = this.value"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="textcolor" class="block text-xs font-medium text-zinc-400 mb-1.5 font-semibold uppercase tracking-wider">Details Panel Text Color</label>
+                            <div class="flex gap-3">
+                                <input 
+                                    type="color" 
+                                    id="textcolor-picker" 
+                                    value="#f4f4f5" 
+                                    class="w-12 h-12 bg-zinc-950 border border-zinc-800 rounded-xl p-1 cursor-pointer"
+                                    oninput="document.getElementById('textcolor').value = this.value"
+                                >
+                                <input 
+                                    type="text" 
+                                    name="textcolor" 
+                                    id="textcolor" 
+                                    required 
+                                    value="#f4f4f5" 
+                                    class="flex-1 px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+                                    oninput="document.getElementById('textcolor-picker').value = this.value"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Action Button -->
+                <button 
+                    type="submit" 
+                    class="w-full py-3.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-600/15 transition-all duration-200 cursor-pointer"
+                >
+                    Create Product
+                </button>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Success Toast Alert -->
+    <% if (success && success.length > 0) { %>
+        <div class="fixed bottom-6 right-6 z-50 animate-bounce">
+            <div class="bg-blue-600/10 backdrop-blur-xl border border-blue-500/20 text-blue-400 px-6 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                <span class="text-sm font-medium"><%= success %></span>
+            </div>
+        </div>
+    <% } %>
+
+    <!-- Error Toast Alert -->
+    <% if (error && error.length > 0) { %>
+        <div class="fixed bottom-6 right-6 z-50 animate-bounce">
+            <div class="bg-red-500/10 backdrop-blur-xl border border-red-500/20 text-red-400 px-6 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                <span class="text-sm font-medium"><%= error %></span>
+            </div>
+        </div>
+    <% } %>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-zinc-900 py-6 text-center text-xs text-zinc-600">
+        &copy; 2026 Scatch Inc. All rights reserved.
+    </footer>
+</body>
+</html>

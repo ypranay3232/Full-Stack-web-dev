@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatch | Shop Premium Bags</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col justify-between">
+    <!-- Navigation Bar -->
+    <nav class="w-full border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/shop" class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">SCATCH</a>
+            
+            <div class="flex items-center gap-6">
+                <a href="/shop" class="text-sm font-medium text-zinc-300 hover:text-white transition-all">Shop</a>
+                
+                <a href="/users/cart" class="text-sm font-medium text-zinc-300 hover:text-white transition-all flex items-center gap-1.5 relative group">
+                    Cart
+                    <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-blue-600 text-white min-w-5 h-5 flex items-center justify-center transition-all group-hover:bg-blue-500">
+                        <%= user.cart.length %>
+                    </span>
+                </a>
+                
+                <a href="/logout" class="text-xs font-semibold px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-xl hover:bg-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white transition-all">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Store Area -->
+    <main class="w-full max-w-7xl mx-auto px-6 py-8 flex flex-col lg:flex-row gap-8 flex-1">
+        
+        <!-- Sidebar Filter Panel -->
+        <aside class="w-full lg:w-64 bg-zinc-900/35 border border-zinc-900 p-6 rounded-2xl h-fit space-y-8">
+            <div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-4">Availability</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-2.5 text-sm text-zinc-400 cursor-pointer hover:text-zinc-200">
+                        <input type="checkbox" checked class="rounded border-zinc-800 bg-zinc-950 text-blue-500 focus:ring-blue-500/20">
+                        In Stock
+                    </label>
+                    <label class="flex items-center gap-2.5 text-sm text-zinc-400 cursor-pointer hover:text-zinc-200">
+                        <input type="checkbox" class="rounded border-zinc-800 bg-zinc-950 text-blue-500 focus:ring-blue-500/20">
+                        Out of Stock
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-4">Sort By</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-2.5 text-sm text-zinc-400 cursor-pointer hover:text-zinc-200">
+                        <input type="radio" name="sort" checked class="border-zinc-800 bg-zinc-950 text-blue-500">
+                        Newest Arrivals
+                    </label>
+                    <label class="flex items-center gap-2.5 text-sm text-zinc-400 cursor-pointer hover:text-zinc-200">
+                        <input type="radio" name="sort" class="border-zinc-800 bg-zinc-950 text-blue-500">
+                        Price: Low to High
+                    </label>
+                    <label class="flex items-center gap-2.5 text-sm text-zinc-400 cursor-pointer hover:text-zinc-200">
+                        <input type="radio" name="sort" class="border-zinc-800 bg-zinc-950 text-blue-500">
+                        Price: High to Low
+                    </label>
+                </div>
+            </div>
+
+            <div class="border-t border-zinc-900 pt-6">
+                <a href="/owners/admin" class="w-full flex items-center justify-center py-2.5 text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-200 rounded-xl transition-all">
+                    Create Product (Admin)
+                </a>
+            </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <section class="flex-1">
+            <% if (products.length === 0) { %>
+                <div class="w-full bg-zinc-900/20 border border-zinc-900 rounded-3xl p-16 text-center space-y-3">
+                    <p class="text-zinc-500">No products are available at the moment.</p>
+                    <a href="/owners/admin" class="inline-flex px-6 py-2.5 text-sm font-medium bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-all">
+                        Add a product
+                    </a>
+                </div>
+            <% } else { %>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <% products.forEach(function(product) { %>
+                        <div class="group flex flex-col bg-zinc-900/30 border border-zinc-900 hover:border-zinc-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300">
+                            
+                            <!-- Product Image Canvas -->
+                            <div class="w-full h-56 flex items-center justify-center p-6 relative transition-transform duration-300 group-hover:scale-[1.02]" style="background-color: <%= product.bgcolor %>;">
+                                <% if (product.discount > 0) { %>
+                                    <span class="absolute top-4 left-4 text-[10px] font-bold px-2 py-1 bg-red-600 text-white rounded-full uppercase tracking-wider">
+                                        Sale
+                                    </span>
+                                <% } %>
+                                <img src="data:image/jpeg;base64,<%= product.image %>" class="h-40 object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] group-hover:drop-shadow-[0_25px_30px_rgba(0,0,0,0.25)] transition-all duration-300" style="content: url('data:image/jpeg;base64,<%= product.image %>');">
+                            </div>
+
+                            <!-- Product Information Panel -->
+                            <div class="p-5 flex items-center justify-between" style="background-color: <%= product.placeholder %>; color: <%= product.textcolor %>;">
+                                <div>
+                                    <h4 class="font-bold text-sm tracking-tight"><%= product.name %></h4>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-sm font-semibold">₹ <%= product.price - product.discount %></span>
+                                        <% if (product.discount > 0) { %>
+                                            <span class="text-xs line-through opacity-50">₹ <%= product.price %></span>
+                                        <% } %>
+                                    </div>
+                                </div>
+
+                                <!-- Add to Cart Action -->
+                                <a 
+                                    href="/users/addtocart/<%= product._id %>" 
+                                    class="w-9 h-9 rounded-full bg-white text-zinc-950 font-bold flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer hover:bg-zinc-100"
+                                >
+                                    +
+                                </a>
+                            </div>
+
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+        </section>
+
+    </main>
+
+    <!-- Success Toast Alert -->
+    <% if (success && success.length > 0) { %>
+        <div class="fixed bottom-6 right-6 z-50 animate-bounce">
+            <div class="bg-blue-600/10 backdrop-blur-xl border border-blue-500/20 text-blue-400 px-6 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                <span class="text-sm font-medium"><%= success %></span>
+            </div>
+        </div>
+    <% } %>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-zinc-900 py-6 text-center text-xs text-zinc-600">
+        &copy; 2026 Scatch Inc. All rights reserved.
+    </footer>
+</body>
+</html>
