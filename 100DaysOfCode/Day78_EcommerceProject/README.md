@@ -3,6 +3,7 @@
 Scatch is a premium, full-featured e-commerce bag store application built with **Node.js**, **Express**, **MongoDB**, and **EJS**. The application implements robust user authentication, secure cookie-based session management, inventory creation/styling, and a fully reactive shopping cart invoice system.
 
 ---
+# Project is live on : https://ecommerce-project-9gfd.onrender.com/
 
 ## 🚀 Key Features
 
