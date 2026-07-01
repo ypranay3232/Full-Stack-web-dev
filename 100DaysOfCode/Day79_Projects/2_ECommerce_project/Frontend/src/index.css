@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* we hide the underline for navbar elements and we style the underlines separately for currently active/clicked item */
+a.active hr{
+    display: block;
+}
