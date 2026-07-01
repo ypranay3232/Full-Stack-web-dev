@@ -1,6 +1,7 @@
 notes*.md
 node_modules/
 .env
+.vscode/
 # Logs
 logs
 *.log
