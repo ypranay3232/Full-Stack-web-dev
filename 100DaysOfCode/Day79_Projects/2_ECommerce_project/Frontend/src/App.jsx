@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Router, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Home from "./routes/Home";
 import Collection from "./routes/Collection";
 import About from "./routes/About";
@@ -10,12 +10,14 @@ import Login from "./routes/Login";
 import PlaceOrder from "./routes/PlaceOrder";
 import Orders from "./routes/Orders";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
 
   return <>
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-
+      <ToastContainer />
       <NavBar/>
 
       <Routes>
@@ -31,6 +33,7 @@ const App = () => {
         <Route path='/orders' element={<Orders/>}/>
 
       </Routes>
+      <Footer />
     </div>
   </>
 
