@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom"
 import Home from "./routes/Home";
 import Collection from "./routes/Collection";
@@ -9,16 +9,30 @@ import Cart from "./routes/Cart";
 import Login from "./routes/Login";
 import PlaceOrder from "./routes/PlaceOrder";
 import Orders from "./routes/Orders";
+import Verify from "./routes/Verify";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { ToastContainer } from 'react-toastify';
+import { ShopContext } from "./context/ShopContext";
 
 const App = () => {
+  const { token } = useContext(ShopContext)
 
-  return <>
+  if (!token) {
+    return (
+      <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+        <ToastContainer />
+        <NavBar />
+        <Login />
+        <Footer />
+      </div>
+    )
+  }
+
+  return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       <ToastContainer />
-      <NavBar/>
+      <NavBar />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,12 +45,11 @@ const App = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path='/placeorder' element={<PlaceOrder/>}/>
         <Route path='/orders' element={<Orders/>}/>
-
+        <Route path='/verify' element={<Verify/>}/>
       </Routes>
       <Footer />
     </div>
-  </>
-
+  )
 }
 
 export default App;

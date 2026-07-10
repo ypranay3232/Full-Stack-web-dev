@@ -14,10 +14,10 @@ const About = () => {
       <div className='my-10 flex flex-col md:flex-row gap-16'>
         <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
         <div className='flex flex-col justify-center gap-6 md:w-2/3 text-gray-600'>
-          <p>Forever was born out of a passion for innovation and a relentless desire to redefine the online shopping experience. Our journey began with a simple idea: to create a platform where customers can easily discover, explore, and purchase a wide range of high-quality products from the comfort of their homes.</p>
+          <p>Etoffe de Luxe was born out of a passion for innovation and a relentless desire to redefine the online shopping experience. Our journey began with a simple idea: to create a platform where customers can easily discover, explore, and purchase a wide range of high-quality products from the comfort of their homes.</p>
           <p>Since our inception, we've worked tirelessly to curate a diverse selection of products that cater to every taste, style, and need. From fashion and beauty to electronics and home essentials, we source only the best to ensure that our customers receive exceptional value with every order.</p>
           <b className='text-gray-800'>Our Mission</b>
-          <p>Our mission at Forever is to empower customers with choice, convenience, and confidence. We are committed to delivering a seamless shopping experience, from browsing to checkout and beyond, while maintaining the highest standards of quality and service.</p>
+          <p>Our mission at Etoffe de Luxe is to empower customers with choice, convenience, and confidence. We are committed to delivering a seamless shopping experience, from browsing to checkout and beyond, while maintaining the highest standards of quality and service.</p>
         </div>
       </div>
 
