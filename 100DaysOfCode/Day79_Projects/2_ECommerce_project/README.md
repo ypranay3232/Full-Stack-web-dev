@@ -7,6 +7,12 @@
 
 ---
 
+## 🔗 Live Deployments
+*   **Admin Dashboard (Vercel)**: [https://ecommer-project-deployed.vercel.app/](https://ecommer-project-deployed.vercel.app/)
+*   **Backend API (Render)**: [https://ecommer-project-deployed.onrender.com](https://ecommer-project-deployed.onrender.com)
+
+---
+
 ## 🚀 Key Features
 
 ### 🛒 Customer Storefront (Frontend)
@@ -63,6 +69,21 @@
      npm install
      npm run dev
      ```
+
+---
+
+## 👥 Test Credentials
+
+To test the live deployment quickly, you can use these default credentials:
+
+### 🛡️ Admin Dashboard
+*   **Email**: `admin@etoffedeluxe.com`
+*   **Password**: `admin123`
+
+### 🛒 Customer Storefront
+*   **Email**: `demo@gmail.com`
+*   **Password**: `demo#@123`
+*   *(Test username: **demo**)*
 
 ---
 
